@@ -202,7 +202,7 @@
         }
     };
     for (let i = 0; i < 6; ++i) {
-        TABS.all.items = [...TABS.all.items, ...TABS.all.items];
+        TABS.all.items = [].concat(TABS.all.items, TABS.all.items);
     }
     const TABS_KEYS = Object.keys(TABS);
 
@@ -393,23 +393,15 @@
         </main>;
     }
 
-    // setTimeout(() => {
-    //     const root = ReactDOM.createRoot(document.getElementById('app'));
-    //     root.render(
-    //         <>
-    //             <Header />
-    //             <Main />
-    //         </>
-    //     );
-    // }, 100);
-
-    const root = ReactDOM.createRoot(document.getElementById('app'));
-    root.render(
-        <>
-            <Header />
-            <Main />
-        </>
-    );
+    setTimeout(() => {
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(
+            <>
+                <Header />
+                <Main />
+            </>
+        );
+    }, 100);
 </script>
 
 </body>
