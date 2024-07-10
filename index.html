@@ -70,7 +70,7 @@
         </header>;
     }
 
-    function Event(props) {
+    const Event = React.memo((props) => {
         const ref = React.useRef();
 
         const { onSize } = props;
@@ -92,7 +92,7 @@
                 }
             </button>
         </li>;
-    }
+    });
 
     const TABS = {
         all: {
@@ -202,7 +202,7 @@
         }
     };
     for (let i = 0; i < 6; ++i) {
-        TABS.all.items = [].concat(TABS.all.items, TABS.all.items);
+        TABS.all.items = [...TABS.all.items, ...TABS.all.items];
     }
     const TABS_KEYS = Object.keys(TABS);
 
