@@ -1,4 +1,6 @@
 @import url("vendors/bootstrap.css");
+@import url("./reset.css");
+@import url("./fonts.css");
 
 html {
     font-size: 100%;
@@ -611,3 +613,4 @@ html, body {
         margin-left: 0;
     }
 }
+

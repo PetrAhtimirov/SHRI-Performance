@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -358,12 +357,11 @@ function Main() {
     </main>;
 }
 
-setTimeout(() => {
-    const root = ReactDOM.createRoot(document.getElementById('app'));
-    root.render(
-        <>
-            <Header />
-            <Main />
-        </>
-    );
-}, 100);
+
+const root = ReactDOM.createRoot(document.getElementById('app'));
+root.render(
+    <>
+        <Header />
+        <Main />
+    </>
+);
