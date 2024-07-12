@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: './index.js',
@@ -25,7 +26,16 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [
-            `...`, // This will keep the default minimizers (like Terser for JS)
+            new TerserPlugin({
+                terserOptions: {
+                    compress: {
+                        drop_console: true, // Удаляет console.log и другие объявления консоли
+                    },
+                    output: {
+                        comments: false, // Удаляет все комментарии
+                    },
+                },
+            }),
             new CssMinimizerPlugin({
                 minimizerOptions: {
                     preset: [
