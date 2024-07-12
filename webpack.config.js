@@ -21,6 +21,10 @@ module.exports = {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
+            {
+                test: /\.(png|jpg|webp|svg)$/,
+                loader: 'url-loader'
+            }
         ]
     },
     optimization: {
